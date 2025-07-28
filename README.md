@@ -5,6 +5,7 @@ In this repo the challenge is to refine `Noise2Noise/Self2Self` models.<br>
 
 ## Noise2Noise Fine-tuning
 In the Noise2Noise model, the following loss function is used:
+
 $$
 \begin{cases}
 y_1 = x + n_1 \\
@@ -13,7 +14,7 @@ y_2 = x + n_2
 $$
 
 $$
-\mathbb{E}\left\{ \left\| f(y_1|\Theta) - y_2 \right\|_2^2 \right\}
+\mathbb{E}{\left\| f(y_1|\Theta) - y_2 \right\|_2^2}
 $$
 
 We aim to fine-tune the model using the following modified loss function:
@@ -26,11 +27,11 @@ y_2 = x + n_2
 $$
 
 $$
-\mathbb{E}\left\{ \left\| f(y_1|\Theta) - y_2 \right\|_2^2 \right\} + \mathbb{E}\left\{ \left\| f(y_2|\Theta) - y_1 \right\|_2^2 \right\}
+\mathbb{E}{ \left\| f(y_1|\Theta) - y_2 \right\|_2^2 } + \mathbb{E}{ \left\| f(y_2|\Theta) - y_1 \right\|_2^2}
 $$
 
 **Data:** Two different random noise realizations  
-($n_1, n_2 \sim \mathcal{N}(0, 0.01 \cdot \max(\text{GrayLevel}))$)  
+( $n_1, n_2 \sim \mathcal{N}(0, 0.01 \cdot \max(\text{GrayLevel}))$ )  
 Use image from file `Prob#4.png`.
 
 
